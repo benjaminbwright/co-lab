@@ -4,6 +4,8 @@ const express = require('express');
 // Provides utilities for working with file and directory paths
 const path = require('path');
 
+require('dotenv').config();
+
 // Define Variables 
 // Defining express as a top-level function to be re-used each time a request is made or the port is being listened to
 const app = express();
