@@ -3,7 +3,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 // Provides utilities for working with file and directory paths
-const path = require('path');
+// const path = require('path');
 
 require('dotenv').config();
 
@@ -24,7 +24,8 @@ app.set('view engine', 'handlebars');
 // GET Route for Homepage, '/' is the default filepath
 app.get('/', (req, res) =>
   // The response for sending a get request to the homepage is to receive our index.html file
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+  // res.sendFile(path.join(__dirname, '/public/index.html'))
+  res.render('home')
 );
 
 // When this file is ran, express listens for connections to our designated port address, and returns a node http.Server with this application as its callback
