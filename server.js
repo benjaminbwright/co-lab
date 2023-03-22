@@ -1,6 +1,7 @@
 // Import dependencies
 // Provides functions to send and recieve server requests on the designated port
 const express = require('express');
+const exphbs = require('express-handlebars');
 // Provides utilities for working with file and directory paths
 const path = require('path');
 
@@ -9,12 +10,16 @@ require('dotenv').config();
 // Define Variables
 // Defining express as a top-level function to be re-used each time a request is made or the port is being listened to
 const app = express();
+const hbs = exphbs.create({});
 
 // Sets the PORT variable to either the value of the PORT environment variable, if it is set, or 3001 if it is not set.
 // This is useful when deploying the application to a hosting platform, as the hosting platform may specify the port that the application should listen on through an environment variable.
 const PORT = process.env.PORT || 3001;
 
 // Initialize server
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 
 // GET Route for Homepage, '/' is the default filepath
 app.get('/', (req, res) =>
