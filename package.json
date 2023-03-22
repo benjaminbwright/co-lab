@@ -13,7 +13,8 @@
   "scripts": {
     "prepare": "husky install",
     "test": "eslint --ext .js ./",
-    "watch": "nodemon server"
+    "watch": "nodemon server",
+    "seed": "node seeds/seed.js"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
