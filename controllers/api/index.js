@@ -49,7 +49,6 @@ apiRouter.get('/logout', (req, res) => {
   if (!user) {
     return res.status(400).json({ message: 'user not logged in' });
   }
-  console.log(user);
 
   const { username } = user;
 
