@@ -17,6 +17,7 @@
     "prepare": "husky install",
     "test": "eslint --ext .js ./",
     "watch": "nodemon server",
+    "start": "node server",
     "seed": "node seeds/seed.js"
   },
   "devDependencies": {
