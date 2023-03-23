@@ -15,7 +15,7 @@ const userData = [
 // seed function
 const seedDB = async () => {
   await sequelize.sync({ force: true });
-  await User.bulkCreate(userData);
+  await User.bulkCreate(userData, { individualHooks: true });
   // seed some stuff.
   process.exit(0);
 };

@@ -28,6 +28,7 @@ userRouter.put('/:id', async (req, res) => {
         ...req.body
       },
       {
+        individualHooks: true,
         where: {
           id: req.params.id
         }
