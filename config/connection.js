@@ -6,7 +6,9 @@ let sequelize;
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else if (process.env.NODE_ENV === 'test') {
-  sequelize = new Sequelize('sqlite::memory:');
+  sequelize = new Sequelize('sqlite::memory:', {
+    logging: false
+  });
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
