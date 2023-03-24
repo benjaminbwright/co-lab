@@ -56,11 +56,8 @@ describe('Sequelize User Model Tests', () => {
         password: 'testpassword',
       };
 
-
       const user = await User.create(userData);
-   
-      
-      
+
       // compare the plain text password we used to create the user to the password on the new user instance
       const validPassword = user.checkPassword(userData.password);
       
