@@ -1,13 +1,13 @@
 const sequelize = require('../../config/connection');
-const { Project } = require('../../models');
+const Project = require('../../models/Project');
 
-// describe('Remove This Test', () => {
-//   describe('This test', () => {
-//     it('should pass', () => {
-//       expect(5).toEqual(5);
-//     });
-//   });
-// });
+describe('Remove This Test', () => {
+  describe('This test', () => {
+    it('should pass', () => {
+      expect(5).toEqual(5);
+    });
+  });
+});
 
 beforeAll(async () => {
   await sequelize.sync({ force: true });
