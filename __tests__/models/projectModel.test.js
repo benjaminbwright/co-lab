@@ -20,14 +20,30 @@ describe('Remove This Test', () => {
 //     describe('Creates Project Model Instance', () => {
 //         it('should create a new Project Model Instance', async () => {
 //             const projectData = await Project.create({
-//                 project_name: 'testproject',
-//                 project_user_story: 'as a user, I want to be able to do this',
-//                 project_description: 'testprojectdescription',
-//                 project_stack: 'javascript, node, express, sequelize, handlebars, jest',
-//                 project_interest: 45,
+//                 title: 'testproject',
+//                 userStory: 'as a user, I want to be able to do this',
+//                 repoLink: 'https://github.com/benjaminbwright/co-lab',
+//                 description: 'testprojectdescription',
+//                 stack: 'javascript, node, express, sequelize, handlebars, jest',
+//                 interest: 45,
 //             });
 //             const project = projectData.get({ plain: true });
+//             expect(project).toEqual({
+//                 id: 1,
+//                 title: 'testproject',
+//                 userStory: 'as a user, I want to be able to do this',
+//                 repoLink: 'https://github.com/benjaminbwright/co-lab',
+//                 description: 'testprojectdescription',
+//                 stack: 'javascript, node, express, sequelize, handlebars, jest',
+//                 interest: 45,
+//             })
 //             expect(project).toBeDefined();
+//             expect(project.title).toBe('testproject');
+//             expect(project.userStory).toBe('as a user, I want to be able to do this');
+//             expect(project.repoLink).toBe('https://github.com/benjaminbwright/co-lab');
+//             expect(project.description).toBe('testprojectdescription');
+//             expect(project.stack).toBe('javascript, node, express, sequelize, handlebars, jest');
+//             expect(project.interest).toBe(45);
 //         });
 //         // it should create new project model instance with the correct properties and values
 //         it('should create a new Project Model Instance with the correct properties and values', async () => {
