@@ -1,8 +1,8 @@
 const sequelize = require('../../config/connection');
-const { User } = require('../../models');
+const User = require('../../models/User');
 
 beforeAll(async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
 });
 
 afterAll(async () => {
@@ -10,6 +10,14 @@ afterAll(async () => {
 });
 
 describe('Sequelize User Model Tests', () => {
+  describe('Remove This Test', () => {
+    describe('This test', () => {
+      it('should pass', () => {
+        expect(5).toEqual(5);
+      });
+    });
+  });
+  
   describe('Creates User Model Instance', () => {
     it('should create a new User Model Instance', async () => {
       const userData = await User.create({
@@ -20,7 +28,7 @@ describe('Sequelize User Model Tests', () => {
       const user = userData.get({ plain: true });
       expect(user).toBeDefined();
     });
-
+    
     it('should create a new User Model Instance with the correct properties and values', async () => {
       const userData = await User.create({
         username: 'testuser2',
@@ -50,12 +58,11 @@ describe('Sequelize User Model Tests', () => {
 
       const user = await User.create(userData);
 
-      console.log(user);
-
       // compare the plain text password we used to create the user to the password on the new user instance
       const validPassword = user.checkPassword(userData.password);
-
+      
       expect(validPassword).toBe(true);
     });
   });
+  
 });
